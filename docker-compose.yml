@@ -5,7 +5,7 @@ services:
     container_name: fastapi-app-stg
     build: .
     ports:
-      - "${HOST_PORT}:8090"
+      - "${HOST_PORT}:8093"
     env_file:
       - .env
     volumes:
