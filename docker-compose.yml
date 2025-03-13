@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  fastapi:
+    container_name: fastapi-app-stg
+    build: .
+    ports:
+      - "${HOST_PORT}:8090"
+    env_file:
+      - .env
+    volumes:
+      - ${STORAGE_PATH}:${SOURCE_DIR}
+    restart: always
