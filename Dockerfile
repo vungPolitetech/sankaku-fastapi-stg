@@ -7,6 +7,6 @@ COPY . .
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8093
+EXPOSE ${HOST_PORT}
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8093"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${HOST_PORT}"]
