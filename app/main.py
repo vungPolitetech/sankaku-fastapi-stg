@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-SOURCE_DIR = os.getenv("STORAGE_PATH")
+SOURCE_DIR = os.getenv("SOURCE_DIR")
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", 1))  # Default 1MB
 
 @app.get("/stream/{filename:path}")
